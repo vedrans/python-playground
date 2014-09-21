@@ -23,3 +23,6 @@ MAIL_PASSWORD = None
 
 # administrator list
 ADMINS = ['veki86@gmail.com']
+
+# pagination
+POSTS_PER_PAGE = 3
