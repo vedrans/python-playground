@@ -12,7 +12,8 @@ function set_openid(openid, pr)
         openid = openid.substr(0, u) + user
     }
     form = document.forms['login'];
-    form.elements['openid'].value = openid
+    form.elements['openid'].value = openid;
+    form.submit();
 }
 </script>
 <div class="well">
@@ -25,7 +26,7 @@ function set_openid(openid, pr)
             <a href="javascript:set_openid('{{pr.url}}', '{{pr.name}}');"><img src="/static/img/{{pr.name.lower()}}.png" class="img-polaroid" style="margin:2px;" /></a>
             {% endfor %}
         </div>
-        <div class="form-group{% if form.errors.openid %} error{% endif %}">
+        <div style="display:none" class="form-group{% if form.errors.openid %} error{% endif %}">
             <label class="control-label" for="openid">Or enter your OpenID here:</label>
             <div class="controls">
                 {{ form.openid(size = 80, class = "span4") }}
@@ -34,14 +35,14 @@ function set_openid(openid, pr)
                 {% endfor %}
             </div>
         </div>
-        <div class="form-group">
+        <div style="display:none" class="form-group">
             <div class="controls">
                 <label class="checkbox" for="remember_me">
                     {{ form.remember_me }} Remember Me
                 </label>
             </div>
         </div>
-        <div class="form-group">
+        <div style="display:none" class="form-group">
             <div class="controls">
                 <input class="btn btn-primary" type="submit" value="Sign In">
             </div>
