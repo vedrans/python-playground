@@ -1,7 +1,7 @@
 # README
 
 ## Description
-This is just test project.
+This is just example showcase app for Python.
 
 ## Technical informations
 * Python
